@@ -48,7 +48,7 @@ function Home() {
         >
           <Switch checked={darkMode} onChange={changeTheme} />
           <Typography variant="h4" gutterBottom component="div" mt="4">
-            {darkMode ? "Dark" : "Light"} Mode Handle
+            {darkMode ? "Dark" : "Light"} Mode Handler Main
           </Typography>
         </Box>
       </Paper>
