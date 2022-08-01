@@ -3,6 +3,7 @@ import { Paper, Switch } from "@mui/material";
 import Box from "@mui/material/Box";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
+import ListTodo from "../components/listTodo";
 
 function Home() {
   const [darkMode, setDarkMode] = useState(true);
@@ -52,6 +53,9 @@ function Home() {
           </Typography>
         </Box>
       </Paper>
+      <Box>
+        <ListTodo />
+      </Box>
     </ThemeProvider>
   );
 }
