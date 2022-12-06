@@ -2,7 +2,7 @@ import React from 'react'
 
 const Inner = () => {
   return (
-    <div>home</div>
+    <div>HOmESsfsdff</div>
   )
 }
 
