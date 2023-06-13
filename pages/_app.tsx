@@ -1,9 +1,21 @@
-import '../styles/globals.css'
-import { wrapper } from '../src/store'
-import type { AppProps } from 'next/app'
+import { wrapper } from '../src/store/store'
+import { SessionProvider } from "next-auth/react"
+import { Container, CssBaseline } from '@mui/material';
+import Layout from '../src/Layout';
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
-  return <Component {...pageProps} />
+const MyApp = ({
+  Component,
+  pageProps: { session, ...pageProps },
+}) => {
+  return (
+    <SessionProvider session={session}>
+      <CssBaseline />
+      <Layout />
+      <Container>
+        <Component {...pageProps} />
+      </Container>
+    </SessionProvider>
+  );
 }
 
 export default wrapper.withRedux(MyApp)
