@@ -27,7 +27,6 @@ const ProductsGrid = ({ products }: Product) => {
         }
         setSortProduct(tempArray);
     }
-    console.log("products", products[1].price)
     return (
         <>
             <Box>

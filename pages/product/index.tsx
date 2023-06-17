@@ -7,8 +7,7 @@ type Props = {
   products: Product[]
 }
 
-const Products: NextPage<Props> = ({ products }) => {
-
+const Products: NextPage<Props> = ({ products }: Props) => {
 
   return (
     <div>

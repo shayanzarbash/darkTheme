@@ -4,19 +4,13 @@ import InputBase from '@mui/material/InputBase';
 import TextField from '@mui/material/TextField';
 import { Dispatch, SetStateAction, useRef, useState } from 'react';
 
-// type Props = {
-//   open: boolean,
-//   setOpen: Dispatch<SetStateAction<boolean>>
-// }
 
 const SearchFrom = () => {
 
   const [state, setState] = useState(null);
 
-  // const serchRef = useRef<HTMLInputElement>(null)
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log('first');
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
   }
 
   return (
@@ -37,7 +31,7 @@ const SearchFrom = () => {
       <Box>
         <InputBase placeholder='seach...' onChange={handleChange} />
       </Box>
-    </Box >
+    </Box>
   )
 }
 

@@ -12,3 +12,7 @@ export interface Products {
 export interface Product {
     products: Products[];
 }
+
+export type OpenSearch = {
+    searchOpen : boolean
+}
