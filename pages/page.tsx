@@ -1,9 +1,9 @@
-import SkeletonChildrenDemo from '../src/components/test/Test';
+import TitlebarBelowMasonryImageList from '../src/components/test/Test';
 
 const page = () => {
     return (
         <div>
-            <SkeletonChildrenDemo />
+            <TitlebarBelowMasonryImageList />
         </div>
     )
 }

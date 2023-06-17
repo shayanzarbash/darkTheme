@@ -1,40 +1,102 @@
+import * as React from 'react';
 import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
-import { useState } from 'react';
+import ImageList from '@mui/material/ImageList';
+import ImageListItem from '@mui/material/ImageListItem';
+import ImageListItemBar from '@mui/material/ImageListItemBar';
+import { Skeleton } from '@mui/material';
 
 
-export default function TextareaValidator() {
+export default function TitlebarBelowMasonryImageList() {
 
-    const [count, setCount] = useState<string[]>([]);
-    console.log({ count });
+    const [state, setState] = React.useState(false);
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const newValue = e.target.value;
-        setCount(typeof newValue === 'string' ? newValue.split(',') : newValue);
-    }
+    // setTimeout(() => {
+    //     setState(true);
+    // }, 2000);
 
     return (
-        <Box sx={{ minWidth: 120 }}>
-            <FormControl fullWidth>
-                <InputLabel id="demo-simple-select-label">Age</InputLabel>
-                <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={count}
-                    label="Age"
-                    onChange={handleChange}
-                    multiple={true}
-                >
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
-                    <MenuItem value={40}>Fourty</MenuItem>
-                    <MenuItem value={50}>Fifty</MenuItem>
-                </Select>
-            </FormControl>
+        <Box sx={{ width: 1280 }}>
+            <ImageList variant="masonry" cols={4} gap={0}>
+                {itemData.map((item) => (
+                    <Box sx={{ width: 300, marginBottom: 2 }}>
+                        {
+                            state ? (
+                                <ImageListItem key={item.img} >
+                                    <img
+                                        src={`${item.img}?w=248&fit=crop&auto=format`}
+                                        srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                                        alt={item.title}
+                                        loading="lazy"
+                                    />
+                                </ImageListItem>
+                            ) : (<Skeleton variant="rectangular" width="300px" height="100px" />)
+                        }
+                    </Box>
+                ))}
+            </ImageList>
         </Box>
     );
 }
+
+const itemData = [
+    {
+        img: 'https://images.unsplash.com/photo-1549388604-817d15aa0110',
+        title: 'Bed',
+        author: 'swabdesign',
+    },
+    {
+        img: 'https://images.unsplash.com/photo-1525097487452-6278ff080c31',
+        title: 'Books',
+        author: 'Pavel Nekoranec',
+    },
+    {
+        img: 'https://images.unsplash.com/photo-1523413651479-597eb2da0ad6',
+        title: 'Sink',
+        author: 'Charles Deluvio',
+    },
+    {
+        img: 'https://images.unsplash.com/photo-1563298723-dcfebaa392e3',
+        title: 'Kitchen',
+        author: 'Christian Mackie',
+    },
+    {
+        img: 'https://images.unsplash.com/photo-1588436706487-9d55d73a39e3',
+        title: 'Blinds',
+        author: 'Darren Richardson',
+    },
+    {
+        img: 'https://images.unsplash.com/photo-1574180045827-681f8a1a9622',
+        title: 'Chairs',
+        author: 'Taylor Simpson',
+    },
+    {
+        img: 'https://images.unsplash.com/photo-1530731141654-5993c3016c77',
+        title: 'Laptop',
+        author: 'Ben Kolde',
+    },
+    {
+        img: 'https://images.unsplash.com/photo-1481277542470-605612bd2d61',
+        title: 'Doors',
+        author: 'Philipp Berndt',
+    },
+    {
+        img: 'https://images.unsplash.com/photo-1517487881594-2787fef5ebf7',
+        title: 'Coffee',
+        author: 'Jen P.',
+    },
+    {
+        img: 'https://images.unsplash.com/photo-1516455207990-7a41ce80f7ee',
+        title: 'Storage',
+        author: 'Douglas Sheppard',
+    },
+    {
+        img: 'https://images.unsplash.com/photo-1597262975002-c5c3b14bbd62',
+        title: 'Candle',
+        author: 'Fi Bell',
+    },
+    {
+        img: 'https://images.unsplash.com/photo-1519710164239-da123dc03ef4',
+        title: 'Coffee table',
+        author: 'Hutomo Abrianto',
+    },
+];
