@@ -52,7 +52,6 @@ const ProductsGrid = ({ products }: Product) => {
                             <Card sx={{ maxWidth: 345 }}>
                                 <CardActionArea>
                                     <Link href={`/product/${product.id}`}>
-
                                         <CardMedia
                                             component="img"
                                             height="140"

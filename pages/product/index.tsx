@@ -3,15 +3,10 @@ import data from '../../data/data.json';
 import { Product } from '../../types/info';
 import ProductsGrid from '../../src/components/products/ProductsGrid';
 
-type Props = {
-  products: Product[]
-}
-
-const Products: NextPage<Props> = ({ products }: Props) => {
-
+const Products: NextPage<Product> = ({ products }: Product) => {
   return (
     <div>
-      <ProductsGrid  {...{ products }} />
+      <ProductsGrid products={products} />
     </div>
   )
 }
@@ -19,9 +14,7 @@ const Products: NextPage<Props> = ({ products }: Props) => {
 export default Products;
 
 export const getStaticProps: GetStaticProps = async () => {
-
   const products = data.products;
-
   return {
     props: { products }
   }

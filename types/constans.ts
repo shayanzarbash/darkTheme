@@ -7,6 +7,6 @@ export type Action = {
     payload: number;
 }
 
-export type state = {
+export type State = {
     pageTab: number;
 }

@@ -1,11 +1,16 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Rating from '@mui/material/Rating';
-import Typography from '@mui/material/Typography';
+import { useRouter } from 'next/router'
+import { Typography } from '@mui/material';
 
 export default function BasicRating() {
 
 
+    const router = useRouter();
+
+    const id = router.query.slug;
+
+    console.log(id);
 
     return (
         <Box
@@ -13,6 +18,7 @@ export default function BasicRating() {
                 '& > legend': { mt: 2 },
             }}
         >
+            <Typography>{id}</Typography>
         </Box>
     );
 }

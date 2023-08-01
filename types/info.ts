@@ -1,4 +1,4 @@
-export interface Products {
+export type Products = {
     id: number,
     name: string,
     price: number,
@@ -14,5 +14,5 @@ export interface Product {
 }
 
 export type OpenSearch = {
-    searchOpen : boolean
+    searchOpen: boolean
 }
